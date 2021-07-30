@@ -25,18 +25,6 @@ export const StoryReel = ()=>{
                 image="https://i1.wp.com/ipadbooks.contrataweb.com/wp-content/uploads/2012/11/Wallpaper-2.jpg"
                 profileSrc="https://www.cabroworld.com/wp-content/uploads/2020/01/actores-portada.jpg"
                 title="Thor"/>
-                <Story 
-                image="https://i1.wp.com/ipadbooks.contrataweb.com/wp-content/uploads/2012/11/Wallpaper-2.jpg"
-                profileSrc="https://www.cabroworld.com/wp-content/uploads/2020/01/actores-portada.jpg"
-                title="Thor"/>
-                <Story 
-                image="https://i1.wp.com/ipadbooks.contrataweb.com/wp-content/uploads/2012/11/Wallpaper-2.jpg"
-                profileSrc="https://www.cabroworld.com/wp-content/uploads/2020/01/actores-portada.jpg"
-                title="Thor"/>
-                <Story 
-                image="https://i1.wp.com/ipadbooks.contrataweb.com/wp-content/uploads/2012/11/Wallpaper-2.jpg"
-                profileSrc="https://www.cabroworld.com/wp-content/uploads/2020/01/actores-portada.jpg"
-                title="Thor"/>
                 
         </div>
     )

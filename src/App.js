@@ -1,4 +1,5 @@
 import React from 'react';
+import { useStateValue } from './auth/StateProvider';
 import { Feed } from './components/Feed';
 import { Header } from './components/Header';
 import { Login } from './components/Login';
@@ -8,7 +9,7 @@ import './styles/style.css';
 
 export const App=()=>{
 
-  const user = null;
+  const[{ user },dispatch ] = useStateValue();
 
   return(
     <div className="app">

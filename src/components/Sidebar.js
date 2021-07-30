@@ -9,11 +9,13 @@ import ChatIcon from '@material-ui/icons/Chat';
 import StorefrontIcon from '@material-ui/icons/Storefront';
 import VideoLibraryIcon from '@material-ui/icons/VideoLibrary';
 import { ExpandMoreOutlined } from '@material-ui/icons';
+import { useStateValue } from '../auth/StateProvider';
 
 export const Sidebar = ()=>{
+    const[{user},dispatch] = useStateValue();
     return(
         <div className="sidebar">
-            <SidebarRow src='https://us.123rf.com/450wm/tuktukdesign/tuktukdesign1606/tuktukdesign160600119/59070200-icono-de-usuario-hombre-perfil-hombre-de-negocios-avatar-icono-persona-en-la-ilustraci%C3%B3n-vectorial.jpg?ver=6' title="Eulalio nava"/>
+            <SidebarRow src={user.photoURL} title={user.displayName}/>
             <SidebarRow Icon={ LocalHospitalIcon } title="Covid 19 informacion"/>
             <SidebarRow Icon={ EmojiFlagsIcon } title="Pages"/>
             <SidebarRow Icon={ PeopleIcon } title="Friends"/>
