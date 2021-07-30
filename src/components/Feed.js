@@ -1,21 +1,37 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import db from '../firebase/firebase';
 import '../styles/style.css';
 import { MessageSender } from './MessageSender';
 import { Post } from './Post';
 import { StoryReel } from './StoryReel';
 
 export const Feed = ()=>{
+    const[posts,setPosts ] = useState([]);
+
+    useEffect(()=>{
+        db.collection('posts').onSnapshot( (snapshot)=>{
+            setPosts(snapshot.docs.map( (doc)=>({id:doc.id,data:doc.data()})))
+        }
+        )
+    },[]);
+
+    console.log(posts);
     return(
         <div className="feed">
             <StoryReel/>
             <MessageSender/>
-
-            <Post
-                profilePic="https://i0.wp.com/instyle.mx/wp-content/uploads/2020/08/will-smith.jpg?fit=1024%2C1024&ssl=1"
-                message="Buen trabajo"
-                timestamp="Es ahora"
-                username="Eulalionava"
-                image="https://img.blogs.es/anexom/wp-content/uploads/2021/06/Video_FondodePantalla.jpg"/>
+            {
+                posts.map((post)=>(
+                    <Post
+                        key={post.id}
+                        profilePic={post.data.profilePic}
+                        message={post.data.message}
+                        timestamp={post.data.timestamp}
+                        username={post.data.username}
+                        image={post.data.image}
+                    />
+                ))
+            }
 
         </div>
     )
